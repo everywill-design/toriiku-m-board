@@ -511,13 +511,12 @@ position: absolute;
 			    overflow: hidden;
 			    border: 1px solid #004aad;
         }
-
-        .comparison-table table {
+ 　　　　.comparison-table table {
             width: 100%;
             border-collapse: collapse;
-        }
+	 }
 
-        .comparison-table th {
+       .comparison-table th {
             background-color: #004aad;
             color: white;
             padding: 20px;
@@ -1268,4 +1267,11 @@ line-height: 1.5;
 .sankoinfo a {
   color: inherit;          /* 親の#666を継承 */
   text-decoration: none;   /* 下線を消す */
+}
+
+.comparison-table td span.kakko {
+    position: relative;
+    font-size: 14px;
+    color: #333;
+    font-weight: normal;
 }
