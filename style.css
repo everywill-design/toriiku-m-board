@@ -1320,3 +1320,12 @@ line-height: 1.5;
   text-decoration: none;
   margin-left: 2px;      /* ←「参考：」との間隔を最小に */
 }
+
+@media (max-width: 820px) {
+  .cta-button.todocument {
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+}
