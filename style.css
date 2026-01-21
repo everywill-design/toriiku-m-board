@@ -1337,3 +1337,7 @@ line-height: 1.5;
     white-space: nowrap;
   }
 }
+/* 問い合わせボタン（電話相談→問い合わせ用） */
+.cta-button.tocontact img{
+  max-height: 32px;
+}
