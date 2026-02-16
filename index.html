@@ -528,21 +528,17 @@ showSlides();
 function showSlides() {
   let i;
   let slides = document.getElementsByClassName("slide");
-  // すべての画像を一旦非表示にする
+  if (slides.length === 0) return; // スライドがない場合は処理しない
+  
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
   }
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}    
-  
-  // 現在の画像だけを表示
   slides[slideIndex-1].style.display = "block";  
-  
-  // 5秒ごとに次の画像へ
   setTimeout(showSlides, 5000); 
 }
 
-// 矢印ボタン（›）を押した時の処理
 function nextSlide() {
   slideIndex++;
   let slides = document.getElementsByClassName("slide");
@@ -553,11 +549,9 @@ function nextSlide() {
   slides[slideIndex-1].style.display = "block";
 }
 
-// FAQの「もっと見る」機能
 function toggleMoreFaq() {
     const moreFaq = document.querySelector('.morefaq');
     const readmoreBtn = document.querySelector('.readmore');
-    
     if (moreFaq.style.display === 'none' || moreFaq.style.display === '') {
         moreFaq.style.display = 'block';
         readmoreBtn.textContent = '閉じる ▲';
