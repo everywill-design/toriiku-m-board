@@ -1445,3 +1445,64 @@ line-height: 1.5;
     width: 100% !important;
     height: auto !important;
 }
+
+/* --- 最終修正：FAQをFLOWと同じデザインにし、画像切れを直す --- */
+
+/* FAQセクション全体の背景を青にする（FLOWと同じ色） */
+#faq {
+    background-color: #004aad !important;
+    padding-bottom: 80px !important;
+}
+
+/* タイトル部分の余計な下余白を消す */
+#faq .section-label-center {
+    background-color: #004aad !important;
+    margin-bottom: 0 !important;
+}
+
+/* FAQの中身の白い箱（FLOWセクションの .process-steps に合わせる） */
+#faq .container {
+    background-color: #fff !important;
+    max-width: 1100px !important; /* FLOWの max-width に合わせる */
+    margin: 0 auto !important;
+    padding: 60px 40px !important;
+    color: #333 !important;
+    border-radius: 0 0 10px 10px;
+}
+
+/* リスト内の背景色をすべて白で固定 */
+#faq .faq-list, 
+#faq .faq-item, 
+#faq .faq-question, 
+#faq .faq-answer {
+    background-color: #fff !important;
+    color: #333 !important;
+}
+
+/* 質問の文字色とボーダーの調整 */
+#faq .faq-question {
+    border-bottom: 1px solid #004aad !important;
+    margin-top: 20px;
+}
+#faq .faq-question span {
+    color: #333 !important;
+}
+
+/* --- スライドショー画像切れ対策 --- */
+/* 親要素に高さを持たせるため absolute を解除 */
+.slideshow-container {
+    height: auto !important;
+    min-height: 250px;
+    position: relative !important;
+    overflow: visible !important;
+}
+.slide {
+    position: relative !important; /* absolute から変更 */
+    display: none; /* JSで制御 */
+    width: 100% !important;
+}
+.slide img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
