@@ -1370,3 +1370,30 @@ line-height: 1.5;
     height: auto !important; /* 縦横比を維持 */
     object-fit: contain !important; /* 画像全体が収まるように */
 }
+
+/* FAQセクション全体の背景（タイトルの後ろ）は青のまま、リスト部分だけを白くする */
+#faq .container {
+    background-color: #fff; /* リストが表示されるコンテナを白にする */
+    padding: 40px 20px;     /* 内側に余白を作る */
+    margin-top: -20px;      /* 青帯タイトルとの隙間を調整（お好みで） */
+    border-radius: 0 0 10px 10px; /* 下側だけ角を丸くする */
+}
+
+/* FAQの各項目と回答の背景を確実に白に指定 */
+.faq-item, .faq-answer {
+    background-color: #fff !important;
+}
+
+/* スライドショーの画像切れ対策（前回の内容を継続） */
+.slideshow-container {
+    height: auto !important;
+    min-height: 250px; 
+}
+.slide {
+    position: relative !important;
+    display: none;
+}
+.slide img {
+    height: auto !important;
+    object-fit: contain !important;
+}
