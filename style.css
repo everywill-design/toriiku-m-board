@@ -1397,3 +1397,51 @@ line-height: 1.5;
     height: auto !important;
     object-fit: contain !important;
 }
+
+/* --- FAQ修正：タイトル青帯、中身を白背景にする --- */
+
+/* FAQセクション全体の背景は青のままにする */
+#faq {
+    background-color: #004aad !important;
+}
+
+/* タイトル部分（青帯）のスタイルを維持 */
+#faq .section-label-center {
+    background-color: #004aad !important;
+    margin-bottom: 0 !important; /* 隙間をなくす */
+}
+
+/* 質問と回答が入るコンテナだけを白くし、横幅を「導入の流れ」に合わせる */
+#faq .container {
+    background-color: #fff !important;
+    max-width: 1100px; /* FLOWセクションに合わせる */
+    margin: 0 auto !important;
+    padding: 60px 40px !important; /* 内側に余白を作る */
+    color: #333 !important; /* 文字を黒にする */
+}
+
+/* FAQの各項目と回答の背景を白に固定 */
+.faq-item, .faq-answer, .faq-question {
+    background-color: #fff !important;
+    color: #333 !important;
+}
+
+/* 質問の文字色と下の線を調整 */
+.faq-question {
+    border-bottom: 1px solid #004aad !important;
+}
+
+/* スライド画像切れ対策（前回のコードを統合） */
+.slideshow-container {
+    height: auto !important;
+    min-height: 250px;
+    position: relative !important;
+}
+.slide {
+    position: relative !important;
+    display: none;
+}
+.slide img {
+    width: 100% !important;
+    height: auto !important;
+}
