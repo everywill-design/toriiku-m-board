@@ -1520,3 +1520,26 @@ line-height: 1.5;
   color:#fff; /* 念のため（元々.section-titleが白なので基本不要） */
 }
 
+/* =========================
+   FAQ：青帯はタイトルのみ
+   ========================= */
+
+/* セクション全体を白に戻す（!importantに勝つ） */
+body #faq{
+  background:#fff !important;
+}
+
+/* タイトル帯だけ青 */
+body #faq .section-label-center{
+  background:#004aad !important;
+}
+
+/* タイトル文字は白 */
+body #faq .section-title{
+  color:#fff !important;
+}
+
+/* 本文エリアは白固定 */
+body #faq .container{
+  background:#fff !important;
+}
