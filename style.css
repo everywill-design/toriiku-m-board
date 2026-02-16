@@ -1341,3 +1341,32 @@ line-height: 1.5;
 .cta-button.tocontact img{
   max-height: 32px;
 }
+
+/* --- 追加修正分 --- */
+
+/* FAQの背景を白にする */
+#faq .faq-list {
+    background-color: #fff; /* 背景を白に */
+    padding: 40px 20px;     /* 内側に余白を作る */
+    border-radius: 8px;
+}
+
+.faq-answer {
+    border-bottom: 1px solid #eee; /* 線の色を少し薄くして読みやすく */
+}
+
+/* 画像が切れないように表示形式を修正 */
+.slideshow-container {
+    height: auto !important; /* 高さを自動調整 */
+    min-height: 300px;       /* PCでの最低限の高さを確保 */
+}
+
+.slide {
+    position: relative !important; /* 重なりを解除して高さを出す */
+    display: none;
+}
+
+.slide img {
+    height: auto !important; /* 縦横比を維持 */
+    object-fit: contain !important; /* 画像全体が収まるように */
+}
