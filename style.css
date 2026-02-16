@@ -1506,3 +1506,17 @@ line-height: 1.5;
     height: auto !important;
     display: block !important;
 }
+
+/* FAQ：青帯はタイトルだけ、本文は白 */
+#faq{
+  background:#fff;
+}
+
+#faq .section-label-center{
+  background:#004aad;
+}
+
+#faq .section-title{
+  color:#fff; /* 念のため（元々.section-titleが白なので基本不要） */
+}
+
