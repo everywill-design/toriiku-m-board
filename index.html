@@ -523,47 +523,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 let slideIndex = 0;
-let autoPlayTimer;
-
 showSlides();
 
 function showSlides() {
-  const slides = document.getElementsByClassName("slide");
-  
-  const currentIndex = slideIndex % slides.length;
-  const currentSlide = slides[currentIndex];
-  
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "block";
-    slides[i].style.zIndex = "1";
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  // すべての画像を一旦非表示にする
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
   }
-  
-  currentSlide.style.zIndex = "2";
-  
-  currentSlide.style.animation = "none";
-  setTimeout(() => {
-    currentSlide.style.animation = "slideIn 1s ease-in-out";
-  }, 10);
-  
   slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
   
-  // 自動再生タイマーをクリアして再設定
-  clearTimeout(autoPlayTimer);
-  autoPlayTimer = setTimeout(showSlides, 5000);
+  // 現在の画像だけを表示
+  slides[slideIndex-1].style.display = "block";  
+  
+  // 5秒ごとに次の画像へ
+  setTimeout(showSlides, 5000); 
 }
 
+// 矢印ボタン（›）を押した時の処理
 function nextSlide() {
-  // 現在のタイマーをキャンセル
-  clearTimeout(autoPlayTimer);
-  // 次のスライドを表示
-  showSlides();
+  slideIndex++;
+  let slides = document.getElementsByClassName("slide");
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
 }
 
+// FAQの「もっと見る」機能
 function toggleMoreFaq() {
     const moreFaq = document.querySelector('.morefaq');
     const readmoreBtn = document.querySelector('.readmore');
     
-    if (moreFaq.style.display === 'none') {
+    if (moreFaq.style.display === 'none' || moreFaq.style.display === '') {
         moreFaq.style.display = 'block';
         readmoreBtn.textContent = '閉じる ▲';
     } else {
@@ -571,7 +566,6 @@ function toggleMoreFaq() {
         readmoreBtn.textContent = 'もっと見る ▼';
     }
 }
-
 </script>
 </body>
 </html>
